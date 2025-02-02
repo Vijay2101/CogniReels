@@ -1,0 +1,135 @@
+html {
+  scroll-snap-type: y mandatory;
+  overflow: hidden;
+  /* background-color: black; */
+}
+html, body {
+  height: 100%; /* Ensure they take up full viewport height */
+  margin: 0; /* Remove default margin */
+  width: 100%;
+}
+
+.App {
+  display: grid;
+  place-items: center;
+  /* height: 100%; */
+  min-height: 100vh; /* Use viewport height to ensure full-screen coverage */
+  width: 100vw;      /* Use viewport width to cover entire width */
+  overflow: hidden;
+  transform: translateY(-8px);
+}
+
+
+
+.video-container {
+  position: relative;
+  height: 82vh;
+  width: 100%;
+
+  max-width: 300px;
+  border-radius: 20px;
+  background-color: transparent;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  flex-direction: column; /* Ensures vertical layout */
+  overscroll-behavior: contain;
+  margin: 0 auto; /* Ensures consistent centering */
+}
+/* Responsive for mobile (390px width) */
+@media (max-width: 500px) {
+  .video-container {
+    max-width: 390px;
+  }
+}
+.bottom-menu {
+  height: 10vh;
+  width: 98%;
+  
+  overflow: hidden; /* Prevents overflow */
+  position: relative; /* Corrected from 'display: relative;' */
+  display: flex; /* Enables flexbox */
+  align-items: center; /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
+}
+.home-container {
+  position: relative;
+  height: 80vh;
+  width: 98%;
+  max-width: 390px; /* Ensuring consistency */
+  border-radius: 20px;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  flex-direction: column;
+  overscroll-behavior: contain;
+  margin: 0 auto;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: flex-start;
+}
+.main-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers all content */
+}
+
+
+/* Hide scrollbar for Chrome and Opera */
+.video-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Chrome and Opera */
+.home-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure each video snaps properly */
+.video-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  /* flex: 0 0 100%; */
+  height: 100%;
+  /* width: 100%; */
+  
+  max-width: 390px;
+  display: flex;
+
+}
+.video-card video {
+  width: 100%;
+  height: 100%;
+  /* 
+    'cover' will maintain the aspect ratio while ensuring the container is completely covered.
+    If you prefer the video to be stretched (which might distort it), use 'fill' instead.
+  */
+  object-fit: cover;
+}
+
+.media-card {
+  /* width: 100%;
+  max-width: 100%;
+  height: 10vh;
+  object-fit: cover;
+  cursor: pointer;
+  position: relative; */
+
+
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center; */
+  /* width: 100%; */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  flex: 0 0 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+}
+
